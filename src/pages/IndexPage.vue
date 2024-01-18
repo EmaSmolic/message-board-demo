@@ -1,7 +1,7 @@
 <template>
   <q-page class="row items-center justify-evenly">
     <div id="q-app" style="min-height: 100vh">
-      <div class="q-pa-md example-masonry">
+      <div class="q-pa-md example-masonry" style="background-image: url('bg.jpg');">
         <!--q-btn class="q-mb-md" color="primary" label="Regenerate layout" @click="() => console.log('click')"></q-btn-->
 
         <div class="column example-container">
@@ -16,11 +16,15 @@
             class="example-cell"
             tabindex="0"
           >
-            <q-card class="bg-secondary text-white">
-              <div class="text-h4 q-pa-sm">{{ post.title }}</div>
-              <q-separator/>
-              <div class="q-pa-md">{{ post.text }} </div>
-            </q-card>
+            <img
+              :src="'/postits/' + Math.floor(Math.random() * (4 - 1 + 1) + 1) + '.png'"
+              style="position: absolute;"
+            />
+            <div class="q-ma-xl" style="width: 50%; margin-top: 15; position:relative">
+              <div class="text-h4 q-pa-sm q-mt-xl">{{ post.title }}</div>
+              <q-separator />
+              <div class="q-pa-md">{{ post.text }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -83,5 +87,4 @@ const demoRCA = new MessageRCA(
 
       > div
         padding: 4px 8px
-        box-shadow: inset 0 0 0 2px #9e9e9e
 </style>
