@@ -11,7 +11,7 @@
     <q-input
       standout="bg-teal text-white"
       v-model="text"
-      label="Enter the text"
+      label="Message text"
       type="textarea"
     ></q-input>
   </div>
